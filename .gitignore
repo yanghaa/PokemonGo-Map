@@ -3,7 +3,10 @@
 *.db
 *.db-journal
 *.sass-cache
+<<<<<<< HEAD
 *.orig
+=======
+>>>>>>> AHAAAAAAA/master
 config/config.ini
 config/credentials.json
 static/dist/

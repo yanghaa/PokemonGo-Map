@@ -54,6 +54,10 @@ class BaseModel(Model):
                 result['latitude'],  result['longitude'] = \
                     transform_from_wgs_to_gcj(result['latitude'],  result['longitude'])
         return results
+<<<<<<< HEAD
+=======
+
+>>>>>>> AHAAAAAAA/master
 
 class Pokemon(BaseModel):
     # We are base64 encoding the ids delivered by the api

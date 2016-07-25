@@ -10,9 +10,12 @@ import os
 import json
 from datetime import datetime, timedelta
 import ConfigParser
+<<<<<<< HEAD
 import platform
 import logging
 import shutil
+=======
+>>>>>>> AHAAAAAAA/master
 
 from . import config
 
@@ -27,12 +30,15 @@ def parse_unicode(bytestring):
     decoded_string = bytestring.decode(sys.getfilesystemencoding())
     return decoded_string
 
+<<<<<<< HEAD
 def verify_config_file_exists(filename):
     fullpath = os.path.join(os.path.dirname(__file__), filename)
     if os.path.exists(fullpath) is False:
         log.info("Could not find " + filename + ", copying default")
         shutil.copy2(fullpath + '.example', fullpath)
 
+=======
+>>>>>>> AHAAAAAAA/master
 def parse_config(args):
     verify_config_file_exists('../config/config.ini')
     Config = ConfigParser.ConfigParser()
@@ -96,6 +102,7 @@ def get_args():
     parser.set_defaults(DEBUG=False)
     args = parser.parse_args()
 
+<<<<<<< HEAD
     args = parse_db_config(args)
 
     if (args.settings):
@@ -117,6 +124,18 @@ def get_args():
             elif args.password is None:
                 args.password = config["PASSWORD"]
 
+=======
+    if (args.settings):
+        args = parse_config(args) 
+    else:
+        if (args.username is None or args.location is None or args.step_limit is None):
+            parser.print_usage()
+            print sys.argv[0] + ': error: arguments -u/--username, -l/--location, -st/--step-limit are required'
+            sys.exit(1);
+
+        if args.password is None:
+            args.password = getpass.getpass()
+>>>>>>> AHAAAAAAA/master
 
     return args
 
